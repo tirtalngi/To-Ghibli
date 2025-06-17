@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Convert Image to Ghilbi',
   description: 'Made by tirtalngi',
-  generator: 'tirta',
+  generator: '-',
 }
 
 export default function RootLayout({
