@@ -4,8 +4,8 @@ import { type NextRequest, NextResponse } from "next/server"
   try {
     
     const axios = require('axios');
-    const { Quax } = require('@zanixongroup/uploader');
-    const newURL = await Quax(buffer);
+    const { Uguu } = require('@zanixongroup/uploader');
+    const newURL = await Uguu(buffer);
     const { data } = await axios.get('https://this-not.vercel.app/?imageUrl=' + newURL);
 
     return {
