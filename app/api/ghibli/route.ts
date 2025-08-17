@@ -26,12 +26,12 @@ async function img2Ghibli(buffer: Buffer) {
     const axios = require('axios');
     const { Quax } = require('@zanixongroup/uploader');
     const newURL = await Quax(buffer);
-    const { data } = await axios.get('https://abcd-gh.vercel.app/v3?imageUrl=' + newURL);
+    const { data } = await axios.get('https://anabot.my.id/api/ai/toAnime?imageUrl=' + newURL + '&apikey=freeApikey');
 
     return {
       success: true,
       originalSize: buffer.length,
-      convertedImageUrl: data.result.imageUrl,
+      convertedImageUrl: data.data.result,
       message: "Image successfully converted to Ghibli style!",
     }
   } catch (error) {
