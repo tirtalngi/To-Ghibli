@@ -20,7 +20,7 @@ import { type NextRequest, NextResponse } from "next/server"
   }
 } */
 
-async function img2ghibli(buffer: Buffer) {
+async function img2Ghibli(buffer: Buffer) {
   try {
     
     const axios = require('axios');
