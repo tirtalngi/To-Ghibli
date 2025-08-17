@@ -24,8 +24,8 @@ async function img2Ghibli(buffer: Buffer) {
   try {
     
     const axios = require('axios');
-    const { Quax } = require('@zanixongroup/uploader');
-    const newURL = await Quax(buffer);
+    const { Uguu } = require('@zanixongroup/uploader');
+    const newURL = await Uguu(buffer);
     const { data } = await axios.get('https://anabot.my.id/api/ai/toAnime?imageUrl=' + newURL + '&apikey=freeApikey');
 
     return {
