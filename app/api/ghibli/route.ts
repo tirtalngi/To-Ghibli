@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-async function img2Ghibli(buffer: Buffer) {
+/** async function img2Ghibli(buffer: Buffer) {
   try {
     
     const axios = require('axios');
@@ -12,6 +12,26 @@ async function img2Ghibli(buffer: Buffer) {
       success: true,
       convertedImageUrl: data.result,
       originalSize: buffer.length,
+      message: "Image successfully converted to Ghibli style!",
+    }
+  } catch (error) {
+    console.error("Error in img2Ghibli:", error)
+    throw error
+  }
+} */
+
+async function img2ghibli(buffer: Buffer) {
+  try {
+    
+    const axios = require('axios');
+    const { Quax } = require('@zanixongroup/uploader');
+    const newURL = await Quax(buffer);
+    const { data } = await axios.get('https://this-not.vercel.app/v3?imageUrl=' + newURL);
+
+    return {
+      success: true,
+      originalSize: buffer.length,
+      convertedImageUrl: data.result.imageUrl,
       message: "Image successfully converted to Ghibli style!",
     }
   } catch (error) {
